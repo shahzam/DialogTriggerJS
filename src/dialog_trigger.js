@@ -88,8 +88,10 @@ function DialogTrigger(callback, options) {
 				// Only check the scroll position every few seconds, to avoid bogging the UI
 				this.interval = setInterval(function() {
 					var scrollAmount = $(window).scrollTop() - scrollStart;
-					if(scrollAmount < 0)
+					if(scrollAmount < 0) {
 						scrollAmount = 0;
+						scrollStart = $(window).scrollTop();
+					}
 					var downScrollPercent = parseFloat(scrollAmount) / parseFloat(pageHeight);
 					
 					if(downScrollPercent > parseFloat(parentThis.options.percentDown) / 100) {
@@ -116,8 +118,10 @@ function DialogTrigger(callback, options) {
 				// Only check the scroll position every few seconds, to avoid bogging the UI
 				this.interval = setInterval(function() {
 					var scrollAmount = scrollStart - $(window).scrollTop();
-					if(scrollAmount < 0)
+					if(scrollAmount < 0) {
 						scrollAmount = 0;
+						scrollStart = $(window).scrollTop();
+					}
 					var upScrollPercent = parseFloat(scrollAmount) / parseFloat(pageHeight);
 					
 					if(upScrollPercent > parseFloat(parentThis.options.percentUp) / 100) {
