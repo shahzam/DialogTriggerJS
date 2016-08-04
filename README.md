@@ -17,16 +17,23 @@ You can even chain events together, such as requiring the user to scroll down by
     - Call 'callback' when a user intends to exit (such as moving cursor off page or coming back to the top)
    
   * trigger: 'target'
-    - Call 'callback' when a user reaches a particular target element (set 'target' to the name of the element, such as '#mytarget')
+    - Call 'callback' when a user reaches a particular target element
+	- Use 'target' to set the name of the element, such as '#mytarget' (eg. `{ trigger: 'exit_intent', target: '#mytarget' }`)
    
   * trigger: 'scrollDown'
-    - Call 'callback' when a user scrolls down by a certain percent from when the object is instantiated (set 'percentDown' to the percentage 0-100)
+    - Call 'callback' when a user scrolls down by a certain percent of the page from when the object is instantiated
+    - Use 'percentDown' to set the percentage 0-100 (eg. `{ trigger: 'scrollDown', percentDown: 50 }`)
+	- Default percentDown is 50%
    
   * trigger: 'scrollUp'
-    - Call 'callback' when a user scrolls up by a certain percent from when the object is instantiated (set 'percentUp' to the percentage 0-100)
+    - Call 'callback' when a user scrolls up by a certain percent from when the object is instantiated
+	- Use 'percentUp' to set the percentage 0-100 (eg. `{ trigger: 'scrollUp', percentDown: 10 }`)
+	- Default percentUp is 10%
    
   * trigger: 'timeout'
     - Call 'callback' after a certain number of milliseconds have elapsed (set 'timeout' to the desired milliseconds)
+	- Use 'timeout' to set the desired milliseconds (eg. `{ trigger: 'timeout', timeout: 5000 }`)
+	- Default timeout is 0 milliseconds (instant trigger)
 
 ### Examples:
 	function testPopup() {
@@ -36,8 +43,8 @@ You can even chain events together, such as requiring the user to scroll down by
 	// A trigger based on a timeout of 5 seconds
 	var dtTimeout = new DialogTrigger(testPopup, { trigger: 'timeout', timeout: 5000 });
 
-	// A trigger based on the user scrolling down to a target element on the page named '#all'
-	var dtElement = new DialogTrigger(testPopup, { trigger: 'target', target: '#all' });
+	// A trigger based on the user scrolling down to a target element on the page named '#mytarget'
+	var dtElement = new DialogTrigger(testPopup, { trigger: 'target', target: '#mytarget' });
 
 	// A trigger based on the user scrolling down at least 50% of the page
 	var dtScrollDown = new DialogTrigger(testPopup, { trigger: 'scrollDown', percentDown: 50 });

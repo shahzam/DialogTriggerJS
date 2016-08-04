@@ -27,7 +27,6 @@ function DialogTrigger(callback, options) {
 	var defaults = {
 		trigger	: 'timeout',
 		target	: '',
-		percent	: 0,
 		timeout	: 0,
 		percentDown : 50, // Used for 'percent' to define a down scroll threshold of significance (based on page height)
 		percentUp : 10, // Used for 'percent' to define a threshold of upward scroll after down threshold is reached
