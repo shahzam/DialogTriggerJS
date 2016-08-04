@@ -19,7 +19,7 @@ You can even chain events together, such as requiring the user to scroll down by
    
   * trigger: 'target'
     - Call 'callback' when a user reaches a particular target element
-	- Use 'target' to set the name of the element, such as '#mytarget' (eg. `{ trigger: 'callback', target: '#mytarget' }`)
+	- Use 'target' to set the name of the element, such as '#mytarget' (eg. `{ trigger: 'target', target: '#mytarget' }`)
    
   * trigger: 'scrollDown'
     - Call 'callback' when a user scrolls down by a certain percent of the page from when the object is instantiated
