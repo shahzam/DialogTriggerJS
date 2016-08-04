@@ -1,3 +1,7 @@
+// DialogTriggerJS
+// Copyright (c) 2016 Shahzad Malik
+// MIT License
+//
 // Triggers a callback to pop up a dialog (or do anything else) with the specified trigger options.
 //
 // "trigger" can be one of the following:
