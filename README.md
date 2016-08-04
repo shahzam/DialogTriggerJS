@@ -7,9 +7,9 @@ This is useful if you want to pop-up something like a newsletter sign-up form in
 
 You can even chain events together, such as requiring the user to scroll down by some amount like 25% of the page, then back up by 10%, etc.
 
-Basic Usage:
+### Basic Usage:
 
-var dt = new DialogTrigger(callback, options);
+	var dt = new DialogTrigger(callback, options);
 
 "callback" is the Javascript function that should be called when the trigger behavior is met
 "options" consists of a "trigger" and any additional parameters as follows:
@@ -28,25 +28,27 @@ var dt = new DialogTrigger(callback, options);
    trigger: 'timeout'
    Call 'callback' after a certain number of milliseconds have elapsed (set 'timeout' to the desired milliseconds)
 
-Examples:
+### Examples:
+	function testPopup() {
+		alert('Hello there!');
+	}
 
-   function testPopup() {
-      alert('Hello there!');
-   }
-   
-   // A trigger based on a timeout of 5 seconds
-   var dtTimeout = new DialogTrigger(testPopup, { trigger: 'timeout', timeout: 5000 });
-   
-   // A trigger based on the user scrolling down to a target element on the page named '#all'
-   var dtElement = new DialogTrigger(testPopup, { trigger: 'target', target: '#all' });
-   
-   // A trigger based on the user scrolling down at least 50% of the page
-   var dtScrollDown = new DialogTrigger(testPopup, { trigger: 'scrollDown', percentDown: 50 });
-   
-   // A trigger based on "exit intent" when the cursor is detected to go above the top of the browser window (useful in desktop scenarios)
-   var dtExit = new DialogTrigger(testPopup, { trigger: 'exit_intent' });
-   
-   // Triggers can also be chained for a sequence of behaviors (such as scroll down by 50%, then up by 10%):
-   var dtPercentDown = new DialogTrigger(function() {
-      var dtPercentUp = new DialogTrigger(testPopup, { trigger: 'scrollUp', percentUp: 10 });
-   }, { trigger: 'scrollDown', percentDown: 50 });
+	// A trigger based on a timeout of 5 seconds
+	var dtTimeout = new DialogTrigger(testPopup, { trigger: 'timeout', timeout: 5000 });
+
+	// A trigger based on the user scrolling down to a target element on the page named '#all'
+	var dtElement = new DialogTrigger(testPopup, { trigger: 'target', target: '#all' });
+
+	// A trigger based on the user scrolling down at least 50% of the page
+	var dtScrollDown = new DialogTrigger(testPopup, { trigger: 'scrollDown', percentDown: 50 });
+
+	// A trigger based on "exit intent" when the cursor is detected to go above the top of the browser window (useful in desktop scenarios)
+	var dtExit = new DialogTrigger(testPopup, { trigger: 'exit_intent' });
+
+	// Triggers can also be chained for a sequence of behaviors (such as scroll down by 50%, then up by 10%):
+	var dtPercentDown = new DialogTrigger(function() {
+		var dtPercentUp = new DialogTrigger(testPopup, { trigger: 'scrollUp', percentUp: 10 });
+	}, { trigger: 'scrollDown', percentDown: 50 });
+
+### License
+The MIT License (MIT)
