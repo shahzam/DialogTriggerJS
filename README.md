@@ -27,7 +27,7 @@ You can even chain events together, such as requiring the user to scroll down by
    
   * trigger: 'scrollUp'
     - Call 'callback' when a user scrolls up by a certain percent from when the object is instantiated
-	- Use 'percentUp' to set the percentage 0-100 (eg. `{ trigger: 'scrollUp', percentDown: 10 }`)
+	- Use 'percentUp' to set the percentage 0-100 (eg. `{ trigger: 'scrollUp', percentUp: 10 }`)
 	- Default percentUp is 10%
    
   * trigger: 'timeout'
