@@ -15,7 +15,7 @@ You can even chain events together, such as requiring the user to scroll down by
 - "options" consists of a "trigger" and any additional parameters as follows:
   * trigger: 'exit_intent'
     - Call 'callback' when a user intends to exit (such as moving cursor off page or coming back to the top)
-	- eg. `{ trigger: 'exit_intent', target: '#mytarget' }`
+	- eg. `{ trigger: 'exit_intent' }`
    
   * trigger: 'target'
     - Call 'callback' when a user reaches a particular target element
